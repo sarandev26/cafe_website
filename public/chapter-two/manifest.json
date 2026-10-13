@@ -1,0 +1,9 @@
+{
+  "section": "chapter-two",
+  "count": 193,
+  "width": 1920,
+  "height": 1080,
+  "filePattern": "frame_%04d.webp",
+  "cutIndices": [],
+  "cuts": []
+}

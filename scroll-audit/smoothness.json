@@ -1,0 +1,82 @@
+{
+  "timestamp": "2026-10-13T11:45:21.518Z",
+  "viewport": {
+    "width": 1440,
+    "height": 900
+  },
+  "engineVerification": {
+    "lenisCount": 1,
+    "lenisDrivers": 1,
+    "hasDuration": false,
+    "hasEasing": false,
+    "lerp": 0.075,
+    "wheelMultiplier": 0.8
+  },
+  "hero": {
+    "constantVelocity": {
+      "samplesCount": 189,
+      "medianSpeed": 7.36,
+      "maxSpeed": 11.51,
+      "maxMedianRatio": 1.56,
+      "burstsAbove2_2x": 0,
+      "maxErrorFrames": 1.1,
+      "longestStallFrames": 0
+    },
+    "discreteNotches": {
+      "notchesCount": 3,
+      "medianAdvance": 0.18,
+      "burstsCount": 0
+    },
+    "trackpadDecay": {
+      "stepsCount": 10,
+      "maxAdvance": 0.15,
+      "burstsCount": 0
+    },
+    "timing": {
+      "p95DtMs": 16.8,
+      "maxDtMs": 17.1,
+      "longTasksAbove50ms": 0
+    }
+  },
+  "chapterTwo": {
+    "constantVelocity": {
+      "samplesCount": 141,
+      "medianSpeed": 5.87,
+      "maxSpeed": 8.49,
+      "maxMedianRatio": 1.45,
+      "burstsAbove2_2x": 0,
+      "maxErrorFrames": 1.91,
+      "longestStallFrames": 0
+    },
+    "discreteNotches": {
+      "notchesCount": 3,
+      "medianAdvance": 0.45,
+      "burstsCount": 0
+    },
+    "trackpadDecay": {
+      "stepsCount": 10,
+      "maxAdvance": 0.65,
+      "burstsCount": 0
+    },
+    "timing": {
+      "p95DtMs": 16.8,
+      "maxDtMs": 17,
+      "longTasksAbove50ms": 0
+    }
+  },
+  "criteriaCheck": {
+    "heroBurstsPass": true,
+    "heroErrorPass": true,
+    "heroStallPass": true,
+    "heroNotchPass": true,
+    "heroTrackpadPass": true,
+    "c2BurstsPass": true,
+    "c2ErrorPass": true,
+    "c2StallPass": true,
+    "c2NotchPass": true,
+    "c2TrackpadPass": true,
+    "lenisCountPass": true,
+    "lenisDriversPass": true,
+    "timingPass": true
+  }
+}

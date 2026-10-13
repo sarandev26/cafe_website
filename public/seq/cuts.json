@@ -1,0 +1,28 @@
+{
+  "totalFrames": 200,
+  "cutIndices": [
+    59,
+    84,
+    148
+  ],
+  "cuts": [
+    {
+      "cutFrame": 59,
+      "nextFrame": 60,
+      "diffScore": 5.02,
+      "ratio": 1.31
+    },
+    {
+      "cutFrame": 84,
+      "nextFrame": 85,
+      "diffScore": 5.28,
+      "ratio": 1.32
+    },
+    {
+      "cutFrame": 148,
+      "nextFrame": 149,
+      "diffScore": 5.4,
+      "ratio": 1.4
+    }
+  ]
+}

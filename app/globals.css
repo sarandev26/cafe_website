@@ -1,0 +1,216 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --burgundy: #5A1420;
+  --wine: #2E0A10;
+  --cream: #F6ECDD;
+  --blush: #E3CFC2;
+  --gold: #D4AF7A;
+  --espresso: #2B1A17;
+  --taupe: #7A6258;
+  --nav-h: 88px;
+}
+
+[data-section] {
+  scroll-margin-top: var(--nav-h);
+}
+
+html {
+  background-color: #2E0A10;
+  color: var(--blush);
+  font-family: var(--font-dm-sans), sans-serif;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: clip;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  overflow-x: clip;
+  background-color: #2E0A10;
+  min-height: 100vh;
+}
+
+/* Official Lenis Smooth Scroll CSS */
+html.lenis, html.lenis-smooth {
+  height: auto;
+}
+html.lenis, html.lenis-smooth body {
+  height: auto;
+}
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+.lenis.lenis-stopped {
+  overflow: clip;
+}
+.lenis.lenis-scrolling iframe {
+  pointer-events: none;
+}
+
+/* Custom Selection */
+::selection {
+  background-color: var(--gold);
+  color: var(--wine);
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: var(--wine);
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(212, 175, 122, 0.4);
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--gold);
+}
+
+/* Film Grain Overlay */
+.film-grain {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none;
+  z-index: 40;
+  opacity: 0.045;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+}
+
+/* Hairline dividers */
+.hairline-gold {
+  border-color: rgba(212, 175, 122, 0.25);
+}
+
+.hairline-ivory {
+  border-color: rgba(246, 236, 221, 0.12);
+}
+
+/* Editorial Typography Helpers */
+.font-editorial-headline {
+  font-family: var(--font-playfair), serif;
+  letter-spacing: -0.025em;
+  line-height: 1.02;
+  text-wrap: balance;
+  overflow-wrap: anywhere;
+}
+
+h1, h2, h3, h4 {
+  text-wrap: balance;
+  overflow-wrap: anywhere;
+}
+
+.font-editorial-body {
+  font-family: var(--font-dm-sans), sans-serif;
+  line-height: 1.7;
+  max-width: 55ch;
+}
+
+.eyebrow-badge {
+  font-family: var(--font-dm-sans), sans-serif;
+  font-size: 0.8125rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--gold);
+}
+
+/* Subtle Warm Image Filter */
+.warm-grade {
+  filter: sepia(0.08) contrast(1.04) brightness(0.97);
+  transition: transform 1.2s cubic-bezier(0.16, 1, 0.3, 1), filter 0.8s ease;
+}
+
+.warm-grade:hover {
+  filter: sepia(0.04) contrast(1.06) brightness(1.02);
+}
+
+/* Ghost Background Typography */
+.ghost-text {
+  user-select: none;
+  pointer-events: none;
+  font-family: var(--font-playfair), serif;
+  font-weight: 700;
+  color: var(--cream);
+  opacity: 0.04;
+  line-height: 0.8;
+  letter-spacing: -0.04em;
+}
+
+/* Hide scrollbars for carousels */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* Review Marquee Keyframes */
+@keyframes marqueeLeft {
+  0% { transform: translateX(0%); }
+  100% { transform: translateX(-50%); }
+}
+
+@keyframes marqueeRight {
+  0% { transform: translateX(-50%); }
+  100% { transform: translateX(0%); }
+}
+
+.animate-marquee {
+  display: flex;
+  width: max-content;
+  animation: marqueeLeft 38s linear infinite;
+}
+
+.animate-marquee-reverse {
+  display: flex;
+  width: max-content;
+  animation: marqueeRight 38s linear infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, ::before, ::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+  .animate-marquee, .animate-marquee-reverse {
+    animation: none !important;
+  }
+}
+
+/* Craft Short Landscape Rules (phone landscape, height <= 520px) */
+@media (max-height: 520px) and (orientation: landscape) {
+  .craft-landscape-hide {
+    display: none !important;
+  }
+  .craft-landscape-row {
+    flex-direction: row !important;
+  }
+  .craft-landscape-col-half {
+    display: flex !important;
+    width: 48% !important;
+    padding-top: 1.5rem !important;
+    padding-bottom: 1rem !important;
+  }
+  .craft-landscape-col-half .craft-arch-box {
+    height: clamp(130px, 44vh, 200px) !important;
+  }
+  .craft-landscape-col-text {
+    width: 50% !important;
+  }
+}
+
